@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tarea 2</string>
+    <string name="label">Calificación Obtenidad</string>
+    <string name="hintInputNumber">Ingresa calificación</string>
+    <string name="labelError">Valor no valido</string>
+    <string name="btnTitle">Calcular </string>
+    <string name="labelResul">Valor literal:</string>
+    <string name="literal_A">A</string>
+    <string name="literal_B">B</string>
+    <string name="literal_C">C</string>
+    <string name="literal_F">F</string>
+</resources>
