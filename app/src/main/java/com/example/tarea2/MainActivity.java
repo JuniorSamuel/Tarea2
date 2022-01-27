@@ -1,9 +1,15 @@
 package com.example.tarea2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView labelError;
     private TextView result;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +29,33 @@ public class MainActivity extends AppCompatActivity {
         result = (TextView) findViewById(R.id.result);
         labelResult = (TextView) findViewById(R.id.labelResult);
         labelError = (TextView) findViewById(R.id.labelError);
+        Button btn = (Button) findViewById(R.id.button);
+
+        input.setOnEditorActionListener((textView, i, keyEvent) -> {
+            if(i == EditorInfo.IME_ACTION_DONE){
+                search();
+            }
+            return false;
+        });
+
+        btn.setOnClickListener(view -> search());
     }
 
-    public void Calcular(View view){
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        startActivity(intent);
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void search(){
         labelError.setVisibility(View.INVISIBLE);
 
         String textPunto = input.getText().toString();

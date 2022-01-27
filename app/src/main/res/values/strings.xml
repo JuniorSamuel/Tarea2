@@ -12,4 +12,8 @@
     <string name="literal_B" translatable="false">B</string>
     <string name="literal_C" translatable="false">C</string>
     <string name="literal_F" translatable="false">F</string>
+    <string name="menuAbout">Acerca de</string>
+    <string name="nameOfCreate" translatable="false">Junior Samuel De Los Santos Velazquez</string>
+    <string name="idOfCreate" translatable="false">2019-8756</string>
+    <string name="labelV" translatable="false">Versión: 1.0</string>
 </resources>
